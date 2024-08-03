@@ -8,7 +8,7 @@ def load_model():
     return data 
     
 data = load_model()
-xgmodel = data["model"]
+xg_model = data["model"]
 encoder = data["le_encoder"]
 
 def show_predict_page():
@@ -33,5 +33,5 @@ def show_predict_page():
         X[:,4] = encoder.fit_transform(X[:,4])
         X[:,5] = encoder.fit_transform(X[:,5])
         X = X.astype(float)
-        pred_price = xgmodel.predict(X)
+        pred_price = xg_model.predict(X)
         st.subheader(f"The predicted health insurance price is ${pred_price[0]:.2f}")
