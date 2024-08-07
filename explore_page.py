@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import plotly.express as px
 
 @st.cache_data
 def load_data():
@@ -45,21 +46,21 @@ def show_explore_page():
     
     # Bar plot
     fig, ax = plt.subplots()
-    ax.bar(df['location'], df['health_insurance_price'])
+    sns.barplot(x=df['location'], y=df['health_insurance_price'], data=df, ax=ax, palette='viridis')
     ax.set_title('Health insurance price as per location')
     ax.set_xlabel('Location')
     ax.set_ylabel('Health insurance price')
     st.pyplot(fig)
 
     fig, ax = plt.subplots()
-    ax.bar(df['gender'], df['health_insurance_price'])
+    sns.barplot(x=df['gender'], y=df['health_insurance_price'], data=df, ax=ax, palette='viridis')
     ax.set_title('Health insurance price as per Gender')
     ax.set_xlabel('Gender')
     ax.set_ylabel('Health insurance price')
     st.pyplot(fig)
 
     fig, ax = plt.subplots()
-    ax.bar(df['smoking_status'], df['health_insurance_price'])
+    sns.barplot(x=df['smoking_status'], y=df['health_insurance_price'], data=df, ax=ax, palette='viridis')
     ax.set_title('Health insurance price as per Gender')
     ax.set_xlabel('Smoking status')
     ax.set_ylabel('Health insurance price')
