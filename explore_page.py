@@ -2,9 +2,9 @@ import streamlit as st
 import pickle
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import seaborn as sns
 import numpy as np
-import plotly.express as px
 
 @st.cache_data
 def load_data():
@@ -32,14 +32,18 @@ def show_explore_page():
 
     # Scatter plot
     fig, ax = plt.subplots()
-    colors = {'male': 'blue', 'female': 'pink'}
+    colors = {'male': 'blue', 'female': 'red'}
     x=df['age']
     y=df['health_insurance_price']
-    ax.scatter(x, y, c=df['gender'].map(colors))
+    ax.scatter(x, y, c=df['gender'].map(colors), alpha = 0.5)
     ax.set_title('Age vs. Health Insurance Price')
     ax.set_xlabel('Age')
     ax.set_ylabel('Health insurance price')
+    male_patch = mpatches.Patch(color='blue', label='Male')
+    female_patch = mpatches.Patch(color='red', label='Female')
+    ax.legend(handles=[male_patch, female_patch], title='Gender')
     st.pyplot(fig)
+    st.subheader("Age vs. Health Insurance Price: scatter plot analysis")
     st.write("""After analyzing the scatter plot for age vs health insurance prices value we can infer that majority of 
     the concentration lies in the 0 to 15000 price range for all the age groups and it gradually reduces as the prices increases.
     Also we can conclude that as the age group value increases from 0 to 70 the average health insurance prices are also increasing.""")
@@ -67,14 +71,16 @@ def show_explore_page():
     st.pyplot(fig)
 
     fig, ax = plt.subplots()
-    colors = {'male': 'blue', 'female': 'pink'}
+    colors = {'yes': 'green', 'no': 'red'}
     x=df['BMI']
     y=df['health_insurance_price']
-    c=df['smoking_status']
-    ax.scatter(x, y, c=df['gender'].map(colors))
+    ax.scatter(x, y, c=df['smoking_status'].map(colors),alpha=0.2)
     ax.set_title('Relationship between BMI and Charges')
     ax.set_xlabel('BMI')
     ax.set_ylabel('Health insurance price')
+    male_patch = mpatches.Patch(color='green', label='Smoking')
+    female_patch = mpatches.Patch(color='red', label='no amoking')
+    ax.legend(handles=[male_patch, female_patch], title='Smoking status')
     st.pyplot(fig)
 
     df['gender'] = encoder.fit_transform(df['gender'])
@@ -84,6 +90,7 @@ def show_explore_page():
     sns.heatmap(df.corr(numeric_only=True).round(2), ax=ax, annot=True)
     ax.set_title('Correlation Heatmap')
     st.write(fig)  
+    st.subheader("Correlation Heatmap analysis")
     st.write("""From the heatmaps for correlation between the variables we can clearly infer that the value of health insurance price 
     is majorly dependent on whether the person is smoker or not and from the above scatterplot as well we can predict that 
     on average person who smokes as a higher value of health insurance than a non-smoking person. We can also see that health 
