@@ -79,7 +79,7 @@ def show_explore_page():
     ax.set_xlabel('BMI')
     ax.set_ylabel('Health insurance price')
     male_patch = mpatches.Patch(color='green', label='Smoking')
-    female_patch = mpatches.Patch(color='red', label='no amoking')
+    female_patch = mpatches.Patch(color='red', label='No smoking')
     ax.legend(handles=[male_patch, female_patch], title='Smoking status')
     st.pyplot(fig)
 
