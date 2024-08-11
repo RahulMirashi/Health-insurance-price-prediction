@@ -64,6 +64,12 @@ The saved_steps.pkl has the label encoder and the trained XGboost model.
 - You can run the app on the local machine using the following command.
   ```bash
   streamlit run app.py 
-  ```  
+  ```
+
+![Predict_page](https://github.com/user-attachments/assets/9be7fc6d-a057-42e7-b9ed-10ec524ed786)
+![explore_page_1](https://github.com/user-attachments/assets/d7293217-7dd1-4d9d-af77-3f2021550e51)
+![explore_page_2](https://github.com/user-attachments/assets/d83f88a6-d394-4061-ad65-1506a8c23411)
+![explore_page_3](https://github.com/user-attachments/assets/122f2dab-3cb3-4893-8ee0-90d08578b232)
+
 
 
