@@ -16,7 +16,7 @@ Objectives
 Data Exploration & Preprocessing: Understand the dataset, clean it and perform exploratory data analysis (EDA) to discover patterns and relationships between variables.
 Feature Engineering: Create and select meaningful features that have a significant impact on the insurance prices.
 Model Development: Train various machine learning models to predict health insurance prices and evaluate their performance.
-Model Evaluation & Optimization: Compare model performance using metrics like RMSE, MAE, and R-squared and fine-tune the best model for better accuracy.
+Model Evaluation & Optimization: Compare model performance using metrics like R2 score and fine-tune the best model for better accuracy.
 Deployment: Provide code and web application that allows users to input their details and get an estimated insurance price.
 
 Dataset
