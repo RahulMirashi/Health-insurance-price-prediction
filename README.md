@@ -14,21 +14,21 @@ The model developed can help insurance companies determine appropriate premiums 
 
 ## Dataset
 The dataset includes features such as:
-Age: The age of the customer.
-Gender: The gender of the customer.
-BMI: Body Mass Index, a measure of body fat based on height and weight.
-Children: The number of children covered by the insurance.
-Smoker Status: Whether the customer is a smoker or not.
-Location: The residential region of the customer.
-Charges: The actual insurance charges (target variable).
+- Age: The age of the customer.
+- Gender: The gender of the customer.
+- BMI: Body Mass Index, a measure of body fat based on height and weight.
+- Children: The number of children covered by the insurance.
+- Smoker Status: Whether the customer is a smoker or not.
+- Location: The residential region of the customer.
+- Charges: The actual insurance charges (target variable).
 
 ## Tools & Technologies
-Programming Language: Python
-Libraries:
-Data Analysis: pandas, numpy
-Data Visualization: matplotlib, seaborn
-Machine Learning: scikit-learn
-Modeling Techniques:
+- Programming Language: Python
+- Libraries:
+- Data Analysis: pandas, numpy
+- Data Visualization: matplotlib, seaborn
+- Machine Learning: scikit-learn
+- Modeling Techniques:
 Linear Regression
 Random Forest
 XGBoost
